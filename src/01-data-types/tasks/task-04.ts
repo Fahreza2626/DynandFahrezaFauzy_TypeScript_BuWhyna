@@ -10,3 +10,43 @@
  * 
  * display the book data using console.log.
  */
+type book = {
+    isbn: string;
+    title: string;
+    author: string;
+    totalPages: number;
+    category: string;
+    isAvailable: boolean;
+};
+const book1: book = {
+    isbn: "978-3-16-148410-0",
+    title: "Pemrograman TypeScript",
+    author: "Veraldy high",
+    totalPages: 180,
+    category: "Programming",
+    isAvailable: true,
+};
+const book2: book = {
+    isbn: "978-0-14-044913-6",
+    title: "Crime and Punishment",
+    author: "Fyodor Dostoevsky",
+    totalPages: 430,
+    category: "Fiction",
+    isAvailable: false,
+};
+const book3: book = {
+    isbn: "978-0-06-112008-4",
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    totalPages: 281,
+    category: "Fiction",
+    isAvailable: true,
+};
+console.log("=== Book 1 ===");
+console.log(book1);
+
+console.log("=== Book 2 ===");
+console.log(book2);
+
+console.log("=== Book 3 ===");
+console.log(book3);
