@@ -22,10 +22,10 @@ const finalExamScore: number = 91.5;
 const attendanceScore: number = 100;
 const participatesInExtracurricular: boolean = true;
 
-console.log("Student Name:", studentName);
-console.log("Student ID:", studentID);
-console.log("Assignment Score:", assignmentScore);
-console.log("Midterm Score:", midtermScore);
-console.log("Final Exam Score:", finalExamScore);
-console.log("Attendance Score:", attendanceScore);
-console.log("Participates in Extracurricular Activities:", participatesInExtracurricular);
+console.log("Student Name                               :", studentName);
+console.log("Student ID                                 :", studentID);
+console.log("Assignment Score                           :", assignmentScore);
+console.log("Midterm Score                              :", midtermScore);
+console.log("Final Exam Score                           :", finalExamScore);
+console.log("Attendance Score                           :", attendanceScore);
+console.log("Participates in Extracurricular Activities :", participatesInExtracurricular);

@@ -34,3 +34,61 @@
  * - Free shipping eligibility
 
  */
+// Product Information
+let keyboardPrice: number = 850000;
+let keyboardQuantity: number = 1;
+
+let mousePrice: number = 275000;
+let mouseQuantity: number = 2;
+
+let monitorStandPrice: number = 420000;
+let monitorStandQuantity: number = 1;
+
+// Customer Information
+let voucherValue: number = 100000;
+let isPremiumMember: boolean = true;
+let rewardPointRate: number = 50000;
+let vatRate: number = 0.11;
+
+// Product Subtotal
+let productSubtotal: number =
+    (keyboardPrice * keyboardQuantity) +
+    (mousePrice * mouseQuantity) +
+    (monitorStandPrice * monitorStandQuantity);
+
+// Membership Discount
+let membershipDiscount: number = 0;
+
+if (isPremiumMember) {
+    membershipDiscount = productSubtotal * 0.10;
+}
+
+// Payment After Membership Discount
+let paymentAfterDiscount: number = productSubtotal - membershipDiscount;
+
+// Voucher Deduction
+let paymentBeforeTax: number = paymentAfterDiscount - voucherValue;
+
+// VAT
+let vat: number = paymentBeforeTax * vatRate;
+
+// Final Payment
+let finalPayment: number = paymentBeforeTax + vat;
+
+// Reward Points
+let rewardPoints: number = Math.floor(paymentBeforeTax / rewardPointRate);
+
+// Free Shipping Eligibility
+let freeShipping: boolean =
+    isPremiumMember || paymentBeforeTax > 1500000;
+
+// Output
+console.log("===== Online Marketplace Checkout =====");
+console.log("Product Subtotal      : Rp" + productSubtotal);
+console.log("Membership Discount   : Rp" + membershipDiscount);
+console.log("Voucher Deduction     : Rp" + voucherValue);
+console.log("Payment Before Tax    : Rp" + paymentBeforeTax);
+console.log("VAT (11%)             : Rp" + vat);
+console.log("Final Payment         : Rp" + finalPayment);
+console.log("Reward Points         :", rewardPoints);
+console.log("Free Shipping         :", freeShipping);
