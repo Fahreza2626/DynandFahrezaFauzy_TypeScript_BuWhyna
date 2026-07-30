@@ -31,7 +31,6 @@ if (billedHours > 5) {
 
 let finalPayment : number = paymentBeforeDiscount - discount;
 
-// Output
 console.log("Total Playing Time         :", totalMinutes, "minutes");
 console.log("Remaining Minutes          :", remainingMinutes);
 console.log("Total Billed Hours         :", billedHours);
