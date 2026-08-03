@@ -21,11 +21,15 @@ type Participant = {
     hasPaid: boolean;
 };
 
+//Di bagian awal saya membuat sebuah tipe data bernama Participant.
+//Tipe data ini digunakan sebagai template agar setiap peserta memiliki
+//struktur data yang sama, yaitu studentId, name, age, dan hasPaid.
+
 const participants: Participant[] = [
     {
         studentId: "ST001",
         name: "Ahmad Fauzi",
-        age: 16,
+        age: 19,
         hasPaid: true,
     },
     {
@@ -42,5 +46,18 @@ const participants: Participant[] = [
     },
 ];
 
-console.log("=== Bootcamp Participants ===");
-console.log(participants);
+//Selanjutnya saya membuat sebuah array bernama participants
+//yang berisi tiga objek peserta. Setiap objek mengikuti
+//template Participant yang telah dibuat sebelumnya.
+
+for (const participant of participants) {
+    if(participant.hasPaid && participant.age>=17)
+                console.log(`
+Student ID: ${participant.studentId}
+Name: ${participant.name}
+Age: ${participant.age}
+Has Paid: ${participant.hasPaid}
+
+`);
+    }
+
