@@ -74,13 +74,11 @@ const patients: Patient[] = [
 ];
 
 
-// 1. Menghitung total pasien
 function countTotalPatients(patients: Patient[]): number {
     return patients.length;
 }
 
 
-// 2. Menghitung pasien yang masih dirawat
 function countAdmittedPatients(patients: Patient[]): number {
     let count = 0;
 
@@ -94,7 +92,6 @@ function countAdmittedPatients(patients: Patient[]): number {
 }
 
 
-// 3. Menghitung pasien yang sudah keluar
 function countDischargedPatients(patients: Patient[]): number {
     let count = 0;
 
@@ -108,7 +105,6 @@ function countDischargedPatients(patients: Patient[]): number {
 }
 
 
-// 4. Menghitung jumlah pasien berdasarkan department
 function countPatientsByDepartment(
     patients: Patient[],
     department: string
@@ -125,7 +121,6 @@ function countPatientsByDepartment(
 }
 
 
-// 5. Mencari tagihan tertinggi
 function findHighestBill(patients: Patient[]): number {
     let highest = patients[0].bill;
 
@@ -139,7 +134,6 @@ function findHighestBill(patients: Patient[]): number {
 }
 
 
-// 6. Mencari tagihan terendah
 function findLowestBill(patients: Patient[]): number {
     let lowest = patients[0].bill;
 
@@ -153,7 +147,6 @@ function findLowestBill(patients: Patient[]): number {
 }
 
 
-// 7. Menghitung rata-rata tagihan
 function calculateAverageBill(patients: Patient[]): number {
     let total = 0;
 
@@ -165,7 +158,6 @@ function calculateAverageBill(patients: Patient[]): number {
 }
 
 
-// 8. Menghitung total pendapatan rumah sakit
 function calculateTotalRevenue(patients: Patient[]): number {
     let total = 0;
 
@@ -177,7 +169,6 @@ function calculateTotalRevenue(patients: Patient[]): number {
 }
 
 
-// 9. Mendapatkan nama pasien yang masih dirawat
 function getAdmittedPatientNames(patients: Patient[]): string[] {
     const names: string[] = [];
 
@@ -191,7 +182,6 @@ function getAdmittedPatientNames(patients: Patient[]): string[] {
 }
 
 
-// 10. Menampilkan report
 function printHospitalReport(patients: Patient[]): void {
     console.log("===== HOSPITAL DAILY REPORT =====");
 
@@ -252,5 +242,4 @@ function printHospitalReport(patients: Patient[]): void {
 }
 
 
-// Menjalankan report
 printHospitalReport(patients);

@@ -102,7 +102,6 @@ const enrollments: Enrollment[] = [
 ];
 
 
-// 1. Total enrollments
 function countTotalEnrollments(enrollments: Enrollment[]): number {
     return enrollments.length;
 }
@@ -122,7 +121,6 @@ function countCompletedEnrollments(enrollments: Enrollment[]): number {
 }
 
 
-// 3. Incomplete enrollments
 function countIncompleteEnrollments(enrollments: Enrollment[]): number {
     let count = 0;
 
@@ -136,7 +134,6 @@ function countIncompleteEnrollments(enrollments: Enrollment[]): number {
 }
 
 
-// 4. Completion percentage
 function calculateCompletionPercentage(
     enrollments: Enrollment[]
 ): number {
@@ -147,7 +144,6 @@ function calculateCompletionPercentage(
 }
 
 
-// 5. Highest score
 function findHighestScore(enrollments: Enrollment[]): number {
     let highest = enrollments[0].score;
 
@@ -161,7 +157,6 @@ function findHighestScore(enrollments: Enrollment[]): number {
 }
 
 
-// 6. Lowest score
 function findLowestScore(enrollments: Enrollment[]): number {
     let lowest = enrollments[0].score;
 
@@ -175,7 +170,6 @@ function findLowestScore(enrollments: Enrollment[]): number {
 }
 
 
-// 7. Average score
 function calculateAverageScore(enrollments: Enrollment[]): number {
     let total = 0;
 
@@ -187,7 +181,6 @@ function calculateAverageScore(enrollments: Enrollment[]): number {
 }
 
 
-// 8. Count passing students
 function countPassingStudents(enrollments: Enrollment[]): number {
     let count = 0;
 
@@ -201,7 +194,6 @@ function countPassingStudents(enrollments: Enrollment[]): number {
 }
 
 
-// 9. Count students by course
 function countStudentsByCourse(
     enrollments: Enrollment[],
     course: string
@@ -218,7 +210,6 @@ function countStudentsByCourse(
 }
 
 
-// 10. Average score by course
 function calculateAverageScoreByCourse(
     enrollments: Enrollment[],
     course: string
@@ -237,7 +228,6 @@ function calculateAverageScoreByCourse(
 }
 
 
-// 11. Total learning hours
 function calculateTotalLearningHours(
     enrollments: Enrollment[]
 ): number {
@@ -251,7 +241,6 @@ function calculateTotalLearningHours(
 }
 
 
-// 12. Average learning duration
 function calculateAverageLearningDuration(
     enrollments: Enrollment[]
 ): number {
@@ -261,7 +250,6 @@ function calculateAverageLearningDuration(
 }
 
 
-// 13. Menampilkan Completion Statistics
 function printCompletionStatistics(
     enrollments: Enrollment[]
 ): void {
@@ -289,7 +277,6 @@ function printCompletionStatistics(
 }
 
 
-// 14. Menampilkan Academic Statistics
 function printAcademicStatistics(
     enrollments: Enrollment[]
 ): void {
@@ -317,7 +304,6 @@ function printAcademicStatistics(
 }
 
 
-// Menampilkan Course Statistics
 function printCourseStatistics(
     enrollments: Enrollment[]
 ): void {
@@ -364,7 +350,6 @@ function printCourseStatistics(
 }
 
 
-// Menampilkan Learning Statistics
 function printLearningStatistics(
     enrollments: Enrollment[]
 ): void {
@@ -382,7 +367,6 @@ function printLearningStatistics(
 }
 
 
-// Menjalankan semua report
 printCompletionStatistics(enrollments);
 printAcademicStatistics(enrollments);
 printCourseStatistics(enrollments);

@@ -62,13 +62,11 @@ const submissions: Submission[] = [
 ];
 
 
-// 1. Menghitung jumlah seluruh siswa
 function countTotalStudents(submissions: Submission[]): number {
     return submissions.length;
 }
 
 
-// 2. Menghitung jumlah siswa yang mengumpulkan
 function countSubmittedAssignments(submissions: Submission[]): number {
     let count = 0;
 
@@ -82,7 +80,6 @@ function countSubmittedAssignments(submissions: Submission[]): number {
 }
 
 
-// 3. Menghitung jumlah siswa yang tidak mengumpulkan
 function countMissingAssignments(submissions: Submission[]): number {
     let count = 0;
 
@@ -96,7 +93,6 @@ function countMissingAssignments(submissions: Submission[]): number {
 }
 
 
-// 4. Menghitung jumlah siswa yang lulus
 function countPassedStudents(submissions: Submission[]): number {
     let count = 0;
 
@@ -110,7 +106,6 @@ function countPassedStudents(submissions: Submission[]): number {
 }
 
 
-// 5. Menghitung jumlah siswa yang harus revisi
 function countRevisionStudents(submissions: Submission[]): number {
     let count = 0;
 
@@ -124,7 +119,6 @@ function countRevisionStudents(submissions: Submission[]): number {
 }
 
 
-// 6. Menghitung rata-rata nilai
 function calculateAverageScore(submissions: Submission[]): number {
     let totalScore = 0;
 
@@ -136,7 +130,6 @@ function calculateAverageScore(submissions: Submission[]): number {
 }
 
 
-// 7. Mencari nilai tertinggi
 function findHighestScore(submissions: Submission[]): number {
     let highest = submissions[0].score;
 
@@ -150,7 +143,6 @@ function findHighestScore(submissions: Submission[]): number {
 }
 
 
-// 8. Mencari nilai terendah
 function findLowestScore(submissions: Submission[]): number {
     let lowest = submissions[0].score;
 
@@ -164,7 +156,6 @@ function findLowestScore(submissions: Submission[]): number {
 }
 
 
-// 9. Menampilkan seluruh report
 function printReport(submissions: Submission[]): void {
     console.log("===== LMS ASSIGNMENT REPORT =====");
 
@@ -210,5 +201,4 @@ function printReport(submissions: Submission[]): void {
 }
 
 
-// Menjalankan report
 printReport(submissions);
