@@ -30,7 +30,6 @@ console.log("Customer Name:", customerName);
 console.log("Premium Member:", isPremiumMember);
 console.log("Room Available:", roomAvailable);
 
-// Reservation logic using nested if
 if (roomAvailable) {
   if (isPremiumMember) {
     console.log("Reservation Result: Free room upgrade.");
