@@ -35,3 +35,75 @@ const students = [
     { name: "Eka", score: 95, attendance: 82 },
     { name: "Fajar", score: 79, attendance: 97 }
 ];
+
+function processStudents(
+    student: typeof students,
+    callback: (student: typeof students[number]) => void
+): void {
+
+    for (let i = 0; i < students.length; i++) {
+        callback(students[i]);
+    }
+}
+
+function getPassFailStatus(
+    student: typeof students[number]
+): void {
+
+    if (student.score >= 75 && student.attendance >= 90) {
+        console.log(`${student.name}: PASS`);
+    } else {
+        console.log(`${student.name}: FAIL`);
+    }
+}
+
+function getAcademicPerformance(
+    student: typeof students[number]
+): void {
+
+    if (student.score >= 90) {
+        console.log(`${student.name}: Excellent Academic Performance`);
+    } else if (student.score >= 75) {
+        console.log(`${student.name}: Good Academic Performance`);
+    } else {
+        console.log(`${student.name}: Needs Academic Improvement`);
+    }
+}
+
+function getAttendanceStatus(
+    student: typeof students[number]
+): void {
+
+    if (student.attendance >= 90) {
+        console.log(`${student.name}: Good Attendance`);
+    } else {
+        console.log(`${student.name}: Poor Attendance`);
+    }
+}
+
+function getRecommendation(
+    student: typeof students[number]
+): void {
+
+    if (student.score >= 90 && student.attendance >= 90) {
+        console.log(`${student.name}: Excellent`);
+    } else if (student.score >= 75 && student.attendance >= 90) {
+        console.log(`${student.name}: Good`);
+    } else if (student.score >= 75 && student.attendance < 90) {
+        console.log(`${student.name}: Improve Attendance`);
+    } else {
+        console.log(`${student.name}: Improve Academic Performance`);
+    }
+}
+
+console.log("=== PASS / FAIL ===");
+processStudents(students, getPassFailStatus);
+
+console.log("=== ACADEMIC PERFORMANCE ===");
+processStudents(students, getAcademicPerformance);
+
+console.log("=== ATTENDANCE STATUS ===");
+processStudents(students, getAttendanceStatus);
+
+console.log("=== FINAL RECOMMENDATION ===");
+processStudents(students, getRecommendation);
