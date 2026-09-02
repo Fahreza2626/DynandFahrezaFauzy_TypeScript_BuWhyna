@@ -45,3 +45,22 @@ const products = [
         stock: 3,
     },
 ];
+
+const availableProducts = products.filter(product => product.stock > 0);
+
+const productNames = products.map(product => product.name);
+
+let totalStockValue = 0;
+
+for (const product of products) {
+    totalStockValue += product.price * product.stock;
+}
+
+const sortedProducts = availableProducts.sort(
+    (a, b) => b.price - a.price
+);
+
+console.log("Available Products:", availableProducts);
+console.log("Product Names:", productNames);
+console.log("Total Stock Value: Rp" + totalStockValue);
+console.log("Sorted Products:", sortedProducts);

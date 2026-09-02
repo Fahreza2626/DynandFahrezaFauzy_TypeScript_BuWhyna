@@ -26,3 +26,40 @@ const students = [
 ];
 
 const correctAnswers = ["A", "B", "C", "A", "B"];
+
+const studentScores = students.map(student => {
+    let correct = 0;
+
+    for (let i = 0; i < correctAnswers.length; i++) {
+        if (student.answers[i] === correctAnswers[i]) {
+            correct++;
+        }
+    }
+
+    return {
+        id: student.id,
+        name: student.name,
+        score: correct * 20
+    };
+});
+
+const passedStudents = studentScores.filter(student => student.score > 70);
+
+const highestScore = Math.max(...studentScores.map(student => student.score));
+
+const highestStudent = studentScores.find(
+    student => student.score === highestScore
+);
+
+let totalScore = 0;
+
+for (const student of studentScores) {
+    totalScore += student.score;
+}
+
+const averageScore = totalScore / studentScores.length;
+
+console.log("Student Scores:", studentScores);
+console.log("Passed Students:", passedStudents);
+console.log("Highest Student:", highestStudent);
+console.log("Average Score:", averageScore);
