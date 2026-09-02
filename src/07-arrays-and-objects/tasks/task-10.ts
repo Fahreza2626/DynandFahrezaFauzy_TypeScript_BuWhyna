@@ -72,3 +72,90 @@ const submissions = [
     },
 ];
 
+const studentResults = submissions.map(submission => {
+    let correct = 0;
+
+    for (const answer of submission.answers) {
+        const question = questions.find(
+            question => question.id === answer.questionId
+        );
+
+        if (question?.correctAnswer === answer.answer) {
+            correct++;
+        }
+    }
+
+    const wrong = questions.length - correct;
+    const score = correct * 25;
+
+    return {
+        student: submission.student,
+        correct: correct,
+        wrong: wrong,
+        score: score
+    };
+});
+
+const categoryResults = questions.map(question => {
+    let totalScore = 0;
+    let totalStudents = 0;
+
+    for (const submission of submissions) {
+        const answer = submission.answers.find(
+            answer => answer.questionId === question.id
+        );
+
+        if (answer) {
+            totalStudents++;
+
+            if (answer.answer === question.correctAnswer) {
+                totalScore += 25;
+            }
+        }
+    }
+
+    return {
+        category: question.category,
+        averageScore: totalScore / totalStudents
+    };
+});
+
+let totalScore = 0;
+
+for (const result of studentResults) {
+    totalScore += result.score;
+}
+
+const averageScore = totalScore / studentResults.length;
+
+const highestScore = Math.max(
+    ...studentResults.map(result => result.score)
+);
+
+const lowestScore = Math.min(
+    ...studentResults.map(result => result.score)
+);
+
+const passedStudents = studentResults.filter(
+    result => result.score >= 75
+).length;
+
+const failedStudents = studentResults.filter(
+    result => result.score < 75
+).length;
+
+const passRate = (passedStudents / studentResults.length) * 100;
+
+const finalAnalytics = {
+    totalStudents: submissions.length,
+    averageScore: Number(averageScore.toFixed(2)),
+    highestScore,
+    lowestScore,
+    passedStudents,
+    failedStudents,
+    passRate: Number(passRate.toFixed(2))
+};
+
+console.log("Student Results:", studentResults);
+console.log("Average Score by Category:", categoryResults);
+console.log("Final Exam Analytics:", finalAnalytics);
