@@ -29,6 +29,20 @@ function calculateTotalPrice(prices: number[]): number {
     return total;
 }
 
+function calculateDiscount(total: number): number {
+    if (total > 1000000) {
+        return total * 0.10;
+    } else {
+        return 0;
+    }
+}
+
 const totalPrice = calculateTotalPrice(prices);
 
+const discount = calculateDiscount(totalPrice);
+
+const finalPrice = totalPrice - discount;
+
 console.log("Total Purchase Price : Rp" + totalPrice);
+console.log("Discount             : Rp" + discount);
+console.log("Final Price          : Rp" + finalPrice);
