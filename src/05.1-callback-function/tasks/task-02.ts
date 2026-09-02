@@ -57,3 +57,4 @@ function showGrade(score: number): void {
 
 processScores(scores, printScore);
 processScores(scores, showGrade);
+
