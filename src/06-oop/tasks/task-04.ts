@@ -39,6 +39,59 @@
  * - Implement class with object
  */
 
+class Employee {
+    employeeId: string;
+    name: string;
+    position: string;
+    private basicSalary: number;
+    private bonus: number;
+
+    constructor(
+        employeeId: string,
+        name: string,
+        position: string,
+        basicSalary: number
+    ) {
+        this.employeeId = employeeId;
+        this.name = name;
+        this.position = position;
+        this.basicSalary = basicSalary;
+        this.bonus = 0;
+    }
+
+    getBasicSalary(): number {
+        return this.basicSalary;
+    }
+
+    setBasicSalary(salary: number): void {
+        if (salary > 0) {
+            this.basicSalary = salary;
+        } else {
+            console.log("Salary harus lebih dari 0.");
+        }
+    }
+
+    addBonus(amount: number): void {
+        if (amount >= 0) {
+            this.bonus += amount;
+        } else {
+            console.log("Bonus tidak boleh negatif.");
+        }
+    }
+
+    getTotalSalary(): number {
+        return this.basicSalary + this.bonus;
+    }
+
+    showProfile(): void {
+        console.log("Employee ID :", this.employeeId);
+        console.log("Name        :", this.name);
+        console.log("Position    :", this.position);
+        console.log("Basic Salary: Rp" + this.basicSalary);
+        console.log("Bonus       : Rp" + this.bonus);
+        console.log("Total Salary: Rp" + this.getTotalSalary());
+    }
+}
 
 const employee = new Employee(
     "EMP001",
@@ -48,5 +101,8 @@ const employee = new Employee(
 );
 
 employee.addBonus(2000000);
-
+employee.showProfile();
+console.log("--------------------");
+console.log(employee.getBasicSalary());
+console.log("--------------------");
 console.log(employee.getTotalSalary());
